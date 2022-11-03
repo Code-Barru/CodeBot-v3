@@ -13,7 +13,8 @@ module.exports = (client) => {
             await client.executeSQL(`UPDATE accounts
                                 SET tier='${soloQ.tier}',
                                     \`rank\`='${soloQ.rank}',
-                                    lp=${soloQ.leaguePoints}`
+                                    lp=${soloQ.leaguePoints}
+                                    WHERE summonerID='${soloQ.id}'`
                             );
         }
     }
