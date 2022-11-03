@@ -9,7 +9,6 @@ module.exports = {
         if (roleIDs.length == 0) {
             return;
         }
-
         await client.giveBackRoles(member, roleIDs);
     }
 }
