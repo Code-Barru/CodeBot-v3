@@ -9,7 +9,7 @@ module.exports = (client) => {
         fields = [];
 
         if (ranked.avg) {
-            var rankedTxt = `${ranked.avg} +- ${ranked.err}\n(Top ${100 - ranked.percentile}% ${ranked.closestRank})`;
+            var rankedTxt = `${ranked.avg} +- ${ranked.err}\n(Top ${(100 - ranked.percentile).toPrecision(3)}% ${ranked.closestRank})`;
             fields.push(
                 {name: 'Ranked', value: rankedTxt}
             );
@@ -24,14 +24,14 @@ module.exports = (client) => {
         }
 
         if (normal.avg) {
-            var normalTxt = `${normal.avg} +- ${normal.err}\n(Top ${100 - normal.percentile}% ${normal.closestRank})`;
+            var normalTxt = `${normal.avg} +- ${normal.err}\n(Top ${(100 - normal.percentile).toPrecision(3)}% ${normal.closestRank})`;
             fields.push(
                 {name:'Normal', value: normalTxt}
             );
         }
 
         if (aram.avg) {
-            var aramTxt = `${aram.avg} +- ${aram.err}\n(Top ${100 - aram.percentile}% ${aram.closestRank})`
+            var aramTxt = `${aram.avg} +- ${aram.err}\n(Top ${(100 - aram.percentile).toPrecision(3)}% ${aram.closestRank})`
             fields.push(
                 {name: 'Aram', value: aramTxt}
             )
