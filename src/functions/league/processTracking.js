@@ -10,11 +10,11 @@ module.exports = (client) => {
                 continue;
             
             await client.sendRankUpdates(player, soloQ, newRankStatus);
-            await client.executeSQL(`UPDATE accounts
+            var res = await client.executeSQL(`UPDATE accounts
                                 SET tier='${soloQ.tier}',
                                     \`rank\`='${soloQ.rank}',
                                     lp=${soloQ.leaguePoints}
-                                    WHERE summonerID='${soloQ.id}'`
+                                    WHERE summonerID='${player.summonerID}'`
                             );
         }
     }
