@@ -10,7 +10,8 @@ module.exports = (client) => {
         }).catch(error => {
             //console.error(error);
         });
-
+	if (!data)
+		return null;
         for (const queue of data) {
             if (queue.queueType === 'RANKED_SOLO_5x5')
                 return queue;

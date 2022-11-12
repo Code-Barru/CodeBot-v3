@@ -4,6 +4,10 @@ module.exports = (client) => {
 
         for (const player of players) {
             var soloQ = await client.getSoloQ(player.summonerID);
+            if (!soloQ) {
+                continue;
+            }
+            
             var newRankStatus = client.compareRanks(player, soloQ);
             
             if (newRankStatus === '=')
