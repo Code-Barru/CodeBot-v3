@@ -18,7 +18,5 @@ module.exports = (client) => {
         schedule.scheduleJob('0 0 */ * *', async () => {
             await client.checkRenames();
         })
-
-        client.guilds.cache.get(process.env.GUILD).commands.set([]);
     }
 }

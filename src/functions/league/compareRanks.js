@@ -48,9 +48,9 @@ module.exports = (client) => {
         if (getTierValue(newRank.tier) > getTierValue(rank.tier))
             return '-tier'
 
-        if (getRankValue(newRank.rank) < getRankValue(rank.rank))
-            return '+rank'
         if (getRankValue(newRank.rank) > getRankValue(rank.rank))
+            return '+rank'
+        if (getRankValue(newRank.rank) < getRankValue(rank.rank))
             return '-rank'
 
         if (newRank.leaguePoints > rank.lp)
