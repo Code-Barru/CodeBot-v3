@@ -53,9 +53,9 @@ module.exports = (client) => {
 		if (getRankValue(newRank.rank) > getRankValue(rank.rank))
 			return '-rank'
 
-		if (newRank.LP > rank.LP)
+		if (newRank.leaguePoints > rank.lp)
 			return '+lp'
-		if (newRank.LP < rank.LP)
+		if (newRank.leaguePoints < rank.lp)
 			return '-lp'
 		
 		return '='
