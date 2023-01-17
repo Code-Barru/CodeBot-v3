@@ -43,21 +43,21 @@ function getRankValue(value) {
 module.exports = (client) => {
     client.compareRanks = (rank, newRank) => {
 
-        if (getTierValue(newRank.tier) < getTierValue(rank.tier))
-		    return '+tier'
         if (getTierValue(newRank.tier) > getTierValue(rank.tier))
-            return '-tier'
+			return '+tier'
+		if (getTierValue(newRank.tier) < getTierValue(rank.tier))
+			return '-tier'
 
-        if (getRankValue(newRank.rank) > getRankValue(rank.rank))
-            return '+rank'
-        if (getRankValue(newRank.rank) < getRankValue(rank.rank))
-            return '-rank'
+		if (getRankValue(newRank.rank) < getRankValue(rank.rank))
+			return '+rank'
+		if (getRankValue(newRank.rank) > getRankValue(rank.rank))
+			return '-rank'
 
-        if (newRank.leaguePoints > rank.lp)
-            return '+lp'
-        if (newRank.leaguePoints < rank.lp)
-            return '-lp'
-        
-        return '=';
+		if (newRank.LP > rank.LP)
+			return '+lp'
+		if (newRank.LP < rank.LP)
+			return '-lp'
+		
+		return '='
     }
 }
