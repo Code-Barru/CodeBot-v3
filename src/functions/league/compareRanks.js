@@ -14,14 +14,16 @@ function getTierValue(tier) {
 			return 4;
 		case 'PLATINUM':
 			return 5;
+		case 'EMERALD':
+			return 6
 		case 'DIAMOND':
-			return 6;
-		case 'MASTER':
 			return 7;
-		case 'GRANDMASTER':
+		case 'MASTER':
 			return 8;
-		case 'CHALLENGER':
+		case 'GRANDMASTER':
 			return 9;
+		case 'CHALLENGER':
+			return 10;
 	}
 }
 

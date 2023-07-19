@@ -15,6 +15,8 @@ function getRankColor(queueData) {
             return 0xECC500;
         case 'PLATINUM':
             return 0x2CDAA0;
+        case 'EMERALD':
+            return 0x77d8b8;
         case 'DIAMOND':
             return 0x2C6BDA;
         case 'MASTER':
